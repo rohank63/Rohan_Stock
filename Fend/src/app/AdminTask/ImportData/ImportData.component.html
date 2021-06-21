@@ -1,0 +1,39 @@
+<div class="text-center">
+  <input class="form-control" type="file" (change)="onChange($event)" #inputFile>
+  <button (click)="removeData()">Remove File</button>
+</div>
+
+
+
+
+<div *ngIf="isExcelFile === false">
+  This is not an Excel file
+</div>
+
+<div class="container row justify-content-center">
+    <span *ngIf="spinnerEnabled" class="k-i-loading k-icon"></span>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Company Code</th> 
+          <th>Stock Exchange</th> 
+          <th>Current Price</th> 
+          <th>Date</th> 
+          <th>Time</th> 
+        </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of dataSheet | async">
+        <td *ngFor="let key of keys">
+          {{item[key]}} 
+        </td>
+      </tr> 
+    </tbody>
+    </table>
+</div>
+
+<br>
+<br>
+<div class="text-center">
+  <button class="btn btn-primary mr-2" (click)="onUpload()">Upload</button>
+</div>

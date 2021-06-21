@@ -1,0 +1,28 @@
+<div class="container row justify-content-center">
+  <table class="table table-bordered">
+    <thead>
+        <tr>
+          <th>Stock Exchange Name</th> 
+          <th>Brief</th> 
+          <th>Address</th> 
+          <th>Remarks</th> 
+        </tr>
+    </thead>
+      <tbody>
+      <tr *ngFor="let item of exchangelist">
+          <td>{{item.stockExchangeName}}</td>
+          <td>{{item.brief}}</td>
+          <td>{{item.address}}</td>
+          <td>{{item.remarks}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+<br>
+<br>
+<br>
+<div class="float-md-left">
+  <a [routerLink]="['/NewExchange']" routerLinkActive="router-link-active" class="btn btn-primary mr-2">New Exchange</a>
+</div>

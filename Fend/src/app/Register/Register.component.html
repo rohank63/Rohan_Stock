@@ -1,0 +1,36 @@
+<div class="container">
+  <form #form="ngForm" (submit)="addNewUser(form)">
+
+    <pre>{{form.value | json}}</pre>
+    <p>{{userName}}</p>
+
+      <div class="form-group">
+      <label>Username</label>
+      <input type="text" name="name" #name="ngModel" class="form-control" [(ngModel)]="userName">
+      </div>
+      
+      <div class="form-group">
+      <label>Password</label>
+      <input type="password" name="pwd" #pwd="ngModel" class="form-control" [(ngModel)]="passWord">
+      </div>
+      
+      <div class="form-group">
+      <label>Email</label>
+      <input type="email" name="mail" #mail="ngModel" class="form-control" [(ngModel)]="email">
+      </div>
+    
+      <div class="form-group">
+      <label>Mobile Number</label>
+      <input type="text" name="no" #no="ngModel" class="form-control" [(ngModel)]="mobile">
+      </div>
+        
+      <div class="form-group">
+      <label>Confirmed</label>
+      <input type="text" name="cnf" #cnf="ngModel" class="form-control" [(ngModel)]="confirmed">
+      </div>
+    
+
+    <button class="btn btn-primary mr-2" type="submit">Submit</button>
+    <a [routerLink]="['/Home']" routerLinkActive="router-link-active" class="btn btn-danger mr-2">Back</a>
+  </form>
+</div>

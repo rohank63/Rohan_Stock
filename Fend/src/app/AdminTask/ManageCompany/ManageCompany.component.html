@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="row">
+
+<div class="search-hero">
+  <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="&#61442;  Start searching">
+</div>
+
+  <table class="table table-bordered">
+    <thead>
+        <tr>
+          <th>Code</th> 
+          <th>Name</th> 
+          <th>CEO</th> 
+          <th>Turn Over</th> 
+          <th>Board</th> 
+          <th>Stock Code</th>
+          <th>Stock Exchange</th>
+          <th>Sector</th>
+          <th>Writeup</th>
+          <th>Action</th>
+        </tr>
+    </thead>
+      <tbody>
+      <tr *ngFor="let item of companylist | filter:searchText">
+          <td>{{item.companyCode}}</td>
+          <td>{{item.companyName}}</td>
+          <td>{{item.ceo}}</td>
+          <td>{{item.turnOver}}</td>
+          <td>{{item.board}}</td>
+          <td>{{item.stockCode}}</td>
+          <td>{{item.stockExchangeName}}</td>
+          <td>{{item.sectorName}}</td>
+          <td>{{item.writeup}}</td>
+          <td>
+          <a [routerLink]="['/EditCompany']" routerLinkActive="router-link-active" class="btn btn-primary mr-2" (click)="StoreCompany(item)">Edit</a>
+          <button class="btn btn-danger mr-2" (click)="DeleteC(item.companyCode)">Delete</button>
+          </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>
+
+
+<br>
+<br>
+<br>
+<div class="float-md-left">
+  <a [routerLink]="['/NewCompany']" routerLinkActive="router-link-active" class="btn btn-primary mr-2">New Company</a>
+</div>
+

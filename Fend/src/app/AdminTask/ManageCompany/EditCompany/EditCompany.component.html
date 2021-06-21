@@ -1,0 +1,56 @@
+<div class="container">
+  <form #form="ngForm" (submit)="Update(form)">
+
+    <pre>{{form.value | json}}</pre>
+
+
+      <div class="form-group">
+      <label>Code</label>
+      <input type="text" name="code" #code="ngModel" class="form-control" [(ngModel)]="companyCode">
+      </div>
+      
+      <div class="form-group">
+      <label>Name</label>
+      <input type="text" name="name" #name="ngModel" class="form-control" [(ngModel)]="companyName">
+      </div>
+      
+      <div class="form-group">
+      <label>CEO</label>
+      <input type="text" name="co" #co="ngModel" class="form-control" [(ngModel)]="ceo">
+      </div>
+    
+      <div class="form-group">
+      <label>Turnover</label>
+      <input type="text" name="tover" #tover="ngModel" class="form-control" [(ngModel)]="turnOver">
+      </div>
+        
+      <div class="form-group">
+      <label>Board</label>
+      <input type="text" name="bd" #bd="ngModel" class="form-control" [(ngModel)]="board">
+      </div>
+    
+      <div class="form-group">
+        <label>Writeup</label>
+        <input type="text" name="about" #about="ngModel" class="form-control" [(ngModel)]="writeUp">
+      </div>
+
+      <div class="form-group">
+        <label>Stock Code</label>
+        <input type="text" name="stock" #stock="ngModel" class="form-control" [(ngModel)]="stockCode">
+      </div>
+      
+      <div class="form-group">
+        <label>Stock Exchange</label>
+        <input type="text" name="exchange" #exchange="ngModel" class="form-control" [(ngModel)]="stockExchangeName">
+      </div>
+
+      <div class="form-group">
+        <label>Sector</label>
+        <input type="text" name="sector" #sector="ngModel" class="form-control" [(ngModel)]="sectorName">
+      </div>
+
+
+    <button class="btn btn-primary mr-2" type="submit">Save</button>
+    <a [routerLink]="['/ManageCompany']" routerLinkActive="router-link-active" class="btn btn-danger mr-2">Back</a>
+  </form>
+</div>

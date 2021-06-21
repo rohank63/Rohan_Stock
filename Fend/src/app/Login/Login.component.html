@@ -1,0 +1,34 @@
+<div class="container row justify-content-center col-auto">
+  <form #form="ngForm" (submit)="onLogin(form)">
+
+    <pre>{{form.value | json}}</pre>
+
+
+  <table class="table table-bordered">
+
+    <div class="form-group">
+      <tr>
+        <td>Username</td>
+        <td><input type="text" name="name" #name="ngModel" class="form-control" [(ngModel)]="userid"> </td>
+      </tr>
+    </div>
+
+    <div class="form-group">
+      <tr>
+        <td>Password</td>
+        <td><input type="password" name="password" #password="ngModel" class="form-control" [(ngModel)]="pwd"> </td>
+      </tr>
+    </div>
+
+  </table> 
+
+    <br>
+    <button class="btn btn-primary mr-2 " type="submit">Login</button>
+    <a [routerLink]="['/Home']" routerLinkActive="router-link-active" class="btn btn-danger mr-2">Back</a>
+
+  </form>
+</div>
+
+
+<p>Admin - {{isadmin}}</p>
+<p>User - {{isuser}}</p>
