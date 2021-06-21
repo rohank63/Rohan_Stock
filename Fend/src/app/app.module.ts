@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {HttpClientModule} from '@angular/common/http';
@@ -26,7 +26,7 @@ import { EditCompanyComponent } from './AdminTask/ManageCompany/EditCompany/Edit
 import { EditIPOComponent } from './AdminTask/ManageIPO/EditIPO/EditIPO.component';
 import { AuthAdminService } from './Shared/Auth-Admin.service';
 import { AuthUserService } from './Shared/Auth-User.service';
-
+import { CompareCompanyComponent } from './UserTask/CompareCompany/CompareCompany.component';
 
 
 
@@ -47,7 +47,8 @@ import { AuthUserService } from './Shared/Auth-User.service';
       ViewIPOComponent,
       ImportDataComponent,
       EditCompanyComponent,
-      EditIPOComponent
+      EditIPOComponent,
+      CompareCompanyComponent
    ],
   imports: [
     BrowserModule,
@@ -60,6 +61,9 @@ import { AuthUserService } from './Shared/Auth-User.service';
     Ng2SearchPipeModule
   ],
   providers: [AdminServiceService,AuthAdminService,AuthUserService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA
+  ]
 })
 export class AppModule { }

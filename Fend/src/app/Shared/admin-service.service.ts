@@ -64,10 +64,6 @@ public AddIPO(item:IPO):Observable<any>{
 }
 
 
-public UploadSD(item:StockPrice[]):Observable<any>{
-  return this.http.post<any>(this.excelpath + "UploadData", item);
-}
-
 public DeleteCompany(item:string):Observable<any>{
   return this.http.get<any>(this.adminpath + "DeleteCompany/" + item);
 }
@@ -92,6 +88,14 @@ public ValidateAdmin(uname:string,pwd:string):Promise<any>{
 public ValidateUser(uname:string,pwd:string):Promise<any>{
   this.is_user_authenticated = true;
   return this.http.get(this.accountpath + "Validate/" + uname + "/" + pwd, {responseType:'text'}).toPromise();
+}
+
+public UploadData(item:StockPrice[]):Observable<any>{
+  return this.http.post<any>(this.excelpath + "UploadData",item);
+}
+
+public GetStocksByCode(item:string):Promise<StockPrice[]>{
+  return this.http.get<StockPrice[]>(this.adminpath + "GetStocks/" + item).toPromise();
 }
 
 }

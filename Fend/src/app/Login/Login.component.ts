@@ -41,6 +41,9 @@ export class LoginComponent implements OnInit {
       this.router.navigate(['User']);
       this.toastr.success("User Logged In");
     }
+    
+    if( (this.isadmin != "Truee") && (this.isuser != "Truee") )
+      this.toastr.error("Wrong Credentials");
 
   }
     

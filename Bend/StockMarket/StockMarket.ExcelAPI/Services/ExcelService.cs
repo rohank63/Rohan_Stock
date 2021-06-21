@@ -21,7 +21,7 @@ namespace StockMarket.ExcelAPI.Services
             return _repo.GetData();
         }
 
-        public void UploadData(IEnumerable<StockPrice> arr)
+        public void UploadData(List<StockPrice> arr)
         {
             _repo.UploadData(arr);
         }

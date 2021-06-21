@@ -67,6 +67,11 @@ namespace StockMarket.AdminAPI.Services
             return _repo.GetExchange();
         }
 
+        public IEnumerable<StockPrice> GetStocks(string code)
+        {
+            return _repo.GetStocks(code);
+        }
+
         public bool Validate(string uname, string pwd)
         {
             return _repo.Validate(uname, pwd);

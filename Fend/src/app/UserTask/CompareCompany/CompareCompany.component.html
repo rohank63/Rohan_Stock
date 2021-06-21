@@ -1,0 +1,13 @@
+<div class="container row justify-content-center col-auto">
+  <form #form="ngForm" (submit)="onSubmit(form)">
+
+    <pre>{{form.value | json}}</pre>
+
+  <label>Company Code 1</label>  
+  <input type="text" name="name1" #name1="ngModel" class="form-control" [(ngModel)]="company_1_code">
+  <br>
+  <br>
+  <button class="btn btn-primary mr-2 " type="submit">Show</button>
+  </form>
+</div>
+

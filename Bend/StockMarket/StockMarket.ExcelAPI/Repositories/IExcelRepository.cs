@@ -7,6 +7,6 @@ namespace StockMarket.ExcelAPI.Repositories
     {
         public void ExcelHelper(string filePath);
         public IEnumerable<StockPrice> GetData();
-        public void UploadData(IEnumerable<StockPrice> arr);
+        public void UploadData(List<StockPrice> arr);
     }
 }

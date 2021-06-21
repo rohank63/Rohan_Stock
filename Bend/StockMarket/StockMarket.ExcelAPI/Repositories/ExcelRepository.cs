@@ -48,13 +48,11 @@ namespace StockMarket.ExcelAPI.Repositories
             return _db.StockPrices.ToList();
         }
 
-        public void UploadData(IEnumerable<StockPrice> arr)
+        public void UploadData(List<StockPrice> arr)
         {
-            foreach (var item in arr)
-            {
-                _db.StockPrices.Add(item);
-            }
-            
+            _db.StockPrices.AddRange(arr);
+            var duplicates = _db.StockPrices.AsEnumerable().GroupBy(s => new{s.CompanyCode,s.Date,s.Time}).SelectMany(g => g.Skip(0)).ToList();
+            _db.StockPrices.RemoveRange(duplicates);
             _db.SaveChanges();
         }
     }

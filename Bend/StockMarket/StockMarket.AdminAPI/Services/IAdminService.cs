@@ -17,5 +17,6 @@ namespace StockMarket.AdminAPI.Services
         public IEnumerable<StockExchange> GetExchange();
         public void AddExchange(StockExchange se);
         public bool Validate(string uname, string pwd);
+        public IEnumerable<StockPrice> GetStocks(string code);
     }
 }

@@ -16,6 +16,7 @@ import { RegisterComponent } from './Register/Register.component';
 import { AuthAdminService } from './Shared/Auth-Admin.service';
 import { AuthUserService } from './Shared/Auth-User.service';
 import { UserComponent } from './User/User.component';
+import { CompareCompanyComponent } from './UserTask/CompareCompany/CompareCompany.component';
 import { ViewIPOComponent } from './UserTask/ViewIPO/ViewIPO.component';
 
 const routes: Routes = [
@@ -33,6 +34,7 @@ const routes: Routes = [
   {path:'ViewIPO',component:ViewIPOComponent,canActivate:[AuthUserService]},
   {path:'Import',component:ImportDataComponent,canActivate:[AuthAdminService]},
   {path:'EditCompany',component:EditCompanyComponent,canActivate:[AuthAdminService]},
+  {path:'CompareCompany',component:CompareCompanyComponent,canActivate:[AuthUserService]},
   {path:'EditIPO',component:EditIPOComponent,canActivate:[AuthAdminService]},
   {path:'',redirectTo:'Home',pathMatch:"full"}
 ];

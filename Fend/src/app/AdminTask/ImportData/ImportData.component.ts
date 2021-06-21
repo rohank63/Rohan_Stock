@@ -83,10 +83,14 @@ export class ImportDataComponent implements OnInit {
           time : row[this.keys[4]],
           }
 
+          //console.log(this.new_stock_price);
+
           this.stock_list.push(this.new_stock_price);
         }
 
+        console.log("R");
         console.log(this.stock_list);
+      
 
 
         this.dataSheet.next(data)
@@ -102,8 +106,10 @@ export class ImportDataComponent implements OnInit {
 // OnClick of button Upload
   onUpload() {
       
-    console.log("Kandhari");
-    this.toastr.success("Uploaded Data");
+    this.service.UploadData(this.stock_list).subscribe(i => {
+      console.log(i)
+      this.toastr.success("Uploaded Data")
+    });
   }
 
   removeData(){

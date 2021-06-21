@@ -30,7 +30,7 @@ namespace StockMarket.ExcelAPI.Controllers
         }
 
         [HttpGet]
-        [Route("ExcelData")]
+        [Route("AllData")]
         public IActionResult ExcelData()
         {
             try
@@ -47,18 +47,18 @@ namespace StockMarket.ExcelAPI.Controllers
 
         [HttpPost]
         [Route("UploadData")]
-        public IActionResult UploadData([FromBody] StockPrice arr)
+        public IActionResult UploadData([FromBody] List<StockPrice> arr)
         {
             
-            /*try{
+            try{
                 _service.UploadData(arr);
                 return Ok();
             }
             catch(Exception ex)
             {
                 return StatusCode(500, ex.Message);
-            }*/
-            return Ok(arr);
+            }
+            
         }
 
 

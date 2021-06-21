@@ -196,7 +196,21 @@ namespace StockMarket.AdminAPI.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(700, ex.Message);
+                return StatusCode(500, ex.Message);
+            }
+        }
+
+        [HttpGet]
+        [Route("GetStocks/{code}")]
+        public IActionResult GetStocks(string code)
+        {
+            try{
+                IEnumerable<StockPrice> stock_p = _service.GetStocks(code);
+                return Ok(stock_p);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500,ex.Message);
             }
         }
     }

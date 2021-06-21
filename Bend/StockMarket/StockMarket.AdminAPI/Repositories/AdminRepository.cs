@@ -76,6 +76,17 @@ namespace StockMarket.AdminAPI.Repositories
             return _db.StockExchanges.ToList();
         }
 
+        public IEnumerable<StockPrice> GetStocks(string code)
+        {
+            var rowsToReturn = _db.StockPrices
+                .Where(b => b.CompanyCode == code)
+                .OrderBy(e => e.Date)
+                .ThenBy(x => x.Time)
+                .ToList();
+            
+            return rowsToReturn;
+        }
+
         public bool Validate(string uname, string pwd)
         {
             if (uname == "Rohan" && pwd == "12345")

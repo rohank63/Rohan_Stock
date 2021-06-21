@@ -17,5 +17,6 @@ namespace StockMarket.AdminAPI.Repositories
         public Company GetCompanyByCode(string code);
         public IEnumerable<StockExchange> GetExchange();
         public bool Validate(string uname, string pwd);
+        public IEnumerable<StockPrice> GetStocks(string code);
     }
 }
