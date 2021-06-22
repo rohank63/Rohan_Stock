@@ -52,6 +52,7 @@ export class CompareCompanyComponent implements OnInit {
 
   async onSubmit(form:NgForm)
   {
+    this.data_1 = [['0',0]];
     await this.service.GetStocksByCode(this.company_1_code).then(response => {
       this.company_stocks = response;
       //console.log(this.company_stocks);
@@ -73,6 +74,7 @@ export class CompareCompanyComponent implements OnInit {
 
   async onSubmit_2(form2:NgForm)
   {
+    this.data_2 = [['0',0]];
     await this.service.GetStocksByCode(this.company_2_code).then(response => {
       this.company_stocks_2 = response;
       //console.log(this.company_stocks);
