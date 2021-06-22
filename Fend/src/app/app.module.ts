@@ -1,4 +1,4 @@
-import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {HttpClientModule} from '@angular/common/http';
@@ -27,6 +27,7 @@ import { EditIPOComponent } from './AdminTask/ManageIPO/EditIPO/EditIPO.componen
 import { AuthAdminService } from './Shared/Auth-Admin.service';
 import { AuthUserService } from './Shared/Auth-User.service';
 import { CompareCompanyComponent } from './UserTask/CompareCompany/CompareCompany.component';
+import { GoogleChartsModule } from 'angular-google-charts';
 
 
 
@@ -48,7 +49,7 @@ import { CompareCompanyComponent } from './UserTask/CompareCompany/CompareCompan
       ImportDataComponent,
       EditCompanyComponent,
       EditIPOComponent,
-      CompareCompanyComponent
+      CompareCompanyComponent,
    ],
   imports: [
     BrowserModule,
@@ -58,12 +59,10 @@ import { CompareCompanyComponent } from './UserTask/CompareCompany/CompareCompan
     HttpClientModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
+    GoogleChartsModule,
   ],
   providers: [AdminServiceService,AuthAdminService,AuthUserService],
   bootstrap: [AppComponent],
-  schemas: [
-    CUSTOM_ELEMENTS_SCHEMA
-  ]
 })
 export class AppModule { }

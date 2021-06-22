@@ -1,13 +1,53 @@
 <div class="container row justify-content-center col-auto">
   <form #form="ngForm" (submit)="onSubmit(form)">
 
-    <pre>{{form.value | json}}</pre>
+    
 
   <label>Company Code 1</label>  
   <input type="text" name="name1" #name1="ngModel" class="form-control" [(ngModel)]="company_1_code">
   <br>
   <br>
-  <button class="btn btn-primary mr-2 " type="submit">Show</button>
+  <button class="btn btn-primary mr-2" type="submit">Show</button>
   </form>
 </div>
 
+
+<div class="container" align="center">
+  <google-chart #chart [type]='mytype'
+    [title]="title"
+    [data]="data_1"
+    [columns]="columnNames"
+    [options]="options"
+    [width]="width"
+    [height]="height">
+  </google-chart>
+</div>
+
+<br>
+<br>
+<br>
+
+<div class="container row justify-content-center col-auto">
+  <form #form2="ngForm" (submit)="onSubmit_2(form)">
+
+    
+
+  <label>Company Code 2</label>  
+  <input type="text" name="name2" #name2="ngModel" class="form-control" [(ngModel)]="company_2_code">
+  <br>
+  <br>
+  <button class="btn btn-primary mr-2" type="submit">Show</button>
+  </form>
+</div>
+
+
+<div class="container" align="center">
+  <google-chart #chart [type]='mytype'
+    [title]="title"
+    [data]="data_2"
+    [columns]="columnNames"
+    [options]="options"
+    [width]="width"
+    [height]="height">
+  </google-chart>
+</div>
