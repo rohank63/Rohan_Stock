@@ -5,7 +5,7 @@
 
 ![Graph](/Screenshots/charts.png)
 
-![Pie](/Screenshots/Pie.png)
+![Pie](/Screenshots/pie.png)
 
 ![Company](/Screenshots/Companies.png)
 
