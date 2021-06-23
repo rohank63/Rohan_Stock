@@ -28,6 +28,7 @@ import { AuthAdminService } from './Shared/Auth-Admin.service';
 import { AuthUserService } from './Shared/Auth-User.service';
 import { CompareCompanyComponent } from './UserTask/CompareCompany/CompareCompany.component';
 import { GoogleChartsModule } from 'angular-google-charts';
+import { CompareSectorComponent } from './UserTask/CompareSector/CompareSector.component';
 
 
 
@@ -50,6 +51,7 @@ import { GoogleChartsModule } from 'angular-google-charts';
       EditCompanyComponent,
       EditIPOComponent,
       CompareCompanyComponent,
+      CompareSectorComponent
    ],
   imports: [
     BrowserModule,

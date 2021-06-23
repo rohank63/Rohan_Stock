@@ -23,14 +23,6 @@ export class CompareCompanyComponent implements OnInit {
 
   title = "" ;
   mytype = ChartType.LineChart;
-  data = [
-      ['Firefox', 45.0],
-      ['IE', 26.8],
-      ['Chrome', 12.8],
-      ['Safari', 8.5],
-      ['Opera', 6.2],
-      ['Others', 0.7] 
-   ];
   data_1 = [['0',0]];
   data_2 = [['0',0]];
   columnNames = ['Time', 'Price'];

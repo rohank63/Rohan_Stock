@@ -1,0 +1,20 @@
+<div>
+  <a [routerLink]="['/User']" routerLinkActive="router-link-active" class="btn btn-danger mr-2">Back</a>
+</div>
+
+
+<div align="center">
+  <button class="btn btn-primary mr-2" (click)="onShow()">Show</button>
+</div>
+  
+<div class="container" align="center">  
+  <google-chart #chart [type]='mytype'
+    [title]="title"
+    [data]="data"
+    [columns]="columnNames"
+    [width]="width"
+    [height]="height">
+  </google-chart>
+</div>
+
+

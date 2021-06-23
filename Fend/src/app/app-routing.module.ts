@@ -17,6 +17,7 @@ import { AuthAdminService } from './Shared/Auth-Admin.service';
 import { AuthUserService } from './Shared/Auth-User.service';
 import { UserComponent } from './User/User.component';
 import { CompareCompanyComponent } from './UserTask/CompareCompany/CompareCompany.component';
+import { CompareSectorComponent } from './UserTask/CompareSector/CompareSector.component';
 import { ViewIPOComponent } from './UserTask/ViewIPO/ViewIPO.component';
 
 const routes: Routes = [
@@ -36,6 +37,7 @@ const routes: Routes = [
   {path:'EditCompany',component:EditCompanyComponent,canActivate:[AuthAdminService]},
   {path:'CompareCompany',component:CompareCompanyComponent,canActivate:[AuthUserService]},
   {path:'EditIPO',component:EditIPOComponent,canActivate:[AuthAdminService]},
+  {path:'CompareSector',component:CompareSectorComponent,canActivate:[AuthUserService]},
   {path:'',redirectTo:'Home',pathMatch:"full"}
 ];
 
