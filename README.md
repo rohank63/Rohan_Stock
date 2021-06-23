@@ -3,6 +3,7 @@
 
 ![Admin Landing Page](/Screenshots/admin.png)
 
+![Graph](/Screenshots/charts.png)
+
 ![](/Screenshots/Companies.png)
 
-![Graph](/Screenshots/graph.png)
